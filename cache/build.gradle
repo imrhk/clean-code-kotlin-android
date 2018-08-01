@@ -1,0 +1,39 @@
+apply plugin: 'com.android.library'
+apply plugin: 'kotlin-android'
+apply plugin: 'kotlin-kapt'
+
+android {
+    def globalConfiguration = rootProject.extensions.getByName("ext")
+
+    compileSdkVersion globalConfiguration["androidCompileSdkVersion"]
+    buildToolsVersion globalConfiguration["androidBuildToolVersion"]
+
+    defaultConfig {
+        minSdkVersion globalConfiguration["androidMinSdkVersion"]
+        targetSdkVersion globalConfiguration["androidTargetSdkVersion"]
+    }
+
+    buildTypes {
+        release {
+            minifyEnabled false
+            proguardFiles getDefaultProguardFile('proguard-android.txt'), 'proguard-rules.pro'
+        }
+    }
+}
+
+dependencies {
+    def cacheDependencies = rootProject.ext.cacheDependencies
+    compileOnly cacheDependencies.javaxAnnotation
+
+    implementation project(":data")
+
+    implementation cacheDependencies.gson
+    implementation cacheDependencies.kotlin
+    implementation cacheDependencies.javaxInject
+    implementation cacheDependencies.rxKotlin
+    implementation cacheDependencies.roomRuntime
+    implementation cacheDependencies.roomRxJava
+
+    kapt cacheDependencies.roomCompiler
+
+}

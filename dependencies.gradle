@@ -1,0 +1,118 @@
+ext {
+
+    androidBuildToolVersion = "28.0.0"
+    androidMinSdkVersion = 14
+    androidTargetSdkVersion  = 28
+    androidCompileSdkVersion = 28
+
+    supportLibraryVersion = '1.0.0-alpha3'
+    oldSupportLibraryVersion = '28.0.0-alpha1'
+    constaintLayoutVersion = '1.1.2'
+    kotlinVersion = '1.2.50'
+
+    rxKotlinVersion = '2.2.0'
+    rxAndroidVersion = '2.0.2'
+    rxJavaVersion = '2.2.0'
+
+    javaxAnnotationVersion = '1.0'
+    javaxInjectVersion = '1'
+    daggerVersion = '2.16'
+
+    roomVersion = '2.0.0-alpha1'
+    archComponentVersion = '2.0.0-alpha1'
+
+    timberVersion = '4.5.1'
+    androidAnnotationVersion = '1.0.0-alpha3'
+    glassFishAnnoatationVersion = '10.0-b28'
+
+    gsonVersion = '2.8.1'
+    glideVersion = '4.0.0'
+    okHttpVersion = '3.10.0'
+    retrofitVersion = '2.4.0'
+
+    glideTransformationVersion = '3.3.0'
+    orientedImageView = '1.0'
+
+
+    domainDependencies = [
+            javaxAnnotation :       "javax.annotation:jsr250-api:${javaxAnnotationVersion}",
+            javaxInject :           "javax.inject:javax.inject:${javaxInjectVersion}",
+            rxJava :                "io.reactivex.rxjava2:rxkotlin:${rxJavaVersion}"
+    ]
+
+    dataDependencies = [
+            rxKotlin :              "io.reactivex.rxjava2:rxkotlin:${rxKotlinVersion}",
+            kotlin :                "org.jetbrains.kotlin:kotlin-stdlib-jre8:${kotlinVersion}",
+            javaxAnnotation :       "javax.annotation:jsr250-api:${javaxAnnotationVersion}",
+            javaxInject :           "javax.inject:javax.inject:${javaxInjectVersion}",
+    ]
+
+    remoteDependencies = [
+            gson :                  "com.google.code.gson:gson:${gsonVersion}",
+            rxKotlin :              "io.reactivex.rxjava2:rxkotlin:${rxKotlinVersion}",
+            kotlin :                "org.jetbrains.kotlin:kotlin-stdlib-jre8:${kotlinVersion}",
+            javaxAnnotation :       "javax.annotation:jsr250-api:${javaxAnnotationVersion}",
+            javaxInject :           "javax.inject:javax.inject:${javaxInjectVersion}",
+            androidAnnotatons :     "androidx.annotation:annotation:${androidAnnotationVersion}",
+            okHttp:                 "com.squareup.okhttp3:okhttp:${okHttpVersion}",
+            okHttpLogger:           "com.squareup.okhttp3:logging-interceptor:${okHttpVersion}",
+            retrofit :              "com.squareup.retrofit2:retrofit:${retrofitVersion}",
+            retrofitConverter :     "com.squareup.retrofit2:converter-gson:${retrofitVersion}",
+            retrofitAdapter :       "com.squareup.retrofit2:adapter-rxjava2:${retrofitVersion}",
+    ]
+
+    cacheDependencies = [
+            gson :                  "com.google.code.gson:gson:${gsonVersion}",
+            rxKotlin :              "io.reactivex.rxjava2:rxkotlin:${rxKotlinVersion}",
+            kotlin :                "org.jetbrains.kotlin:kotlin-stdlib-jre8:${kotlinVersion}",
+            javaxAnnotation :       "javax.annotation:jsr250-api:${javaxAnnotationVersion}",
+            javaxInject :           "javax.inject:javax.inject:${javaxInjectVersion}",
+            androidAnnotatons :     "com.android.support:support-annotations:${androidAnnotationVersion}",
+            roomRuntime :           "androidx.room:room-runtime:${roomVersion}",
+            roomCompiler :          "androidx.room:room-compiler:${roomVersion}",
+            roomRxJava :            "androidx.room:room-rxjava2:${roomVersion}"
+    ]
+
+    presentationDependencies = [
+            rxKotlin :              "io.reactivex.rxjava2:rxkotlin:${rxKotlinVersion}",
+            kotlin :                "org.jetbrains.kotlin:kotlin-stdlib-jre8:${kotlinVersion}",
+            rxAndroid :             "io.reactivex.rxjava2:rxandroid:${rxAndroidVersion}",
+            javaxAnnotation :       "javax.annotation:jsr250-api:${javaxAnnotationVersion}",
+            javaxInject :           "javax.inject:javax.inject:${javaxInjectVersion}",
+            androidAnnotations :    "androidx.annotation:annotation:${androidAnnotationVersion}",
+            archRuntime :           "androidx.lifecycle:lifecycle-runtime:${archComponentVersion}",
+            archExtensions :        "androidx.lifecycle:lifecycle-extensions:${archComponentVersion}",
+            archCompiler :          "androidx.lifecycle:lifecycle-compiler:${archComponentVersion}"
+    ]
+
+    mobileUiDependencies = [
+            daggerCompiler :        "com.google.dagger:dagger-compiler:${daggerVersion}",
+            dagger :                "com.google.dagger:dagger:${daggerVersion}",
+            rxKotlin :              "io.reactivex.rxjava2:rxkotlin:${rxKotlinVersion}",
+            kotlin :                "org.jetbrains.kotlin:kotlin-stdlib-jre8:${kotlinVersion}",
+            rxAndroid :             "io.reactivex.rxjava2:rxandroid:${rxAndroidVersion}",
+            javaxAnnotation :       "javax.annotation:jsr250-api:${javaxAnnotationVersion}",
+            javaxInject :           "javax.inject:javax.inject:${javaxInjectVersion}",
+            glide :                 "com.github.bumptech.glide:glide:${glideVersion}",
+            glideTransformation :   "jp.wasabeef:glide-transformations:${glideTransformationVersion}",
+            androidAnnotations :    "androidx.annotation:annotation:${supportLibraryVersion}",
+            androidSupportV4 :      "androidx.legacy:legacy-support-v4:${supportLibraryVersion}",
+            androidSupportV13 :     "androidx.legacy:legacy-support-v13:${supportLibraryVersion}",
+            appCompatV7 :           "androidx.appcompat:appcompat:${supportLibraryVersion}",
+            supportRecyclerView:    "androidx.recyclerview:recyclerview:${supportLibraryVersion}",
+            constraintLayout   :    "androidx.constraintlayout:constraintlayout:${constaintLayoutVersion}",
+            supportDesign :         "com.google.android.material:material:${supportLibraryVersion}",
+            timber :                "com.jakewharton.timber:timber:${timberVersion}",
+            daggerSupport :         "com.google.dagger:dagger-android-support:${daggerVersion}",
+            daggerProcessor :       "com.google.dagger:dagger-android-processor:${daggerVersion}",
+            glassfishAnnotation :   "org.glassfish:javax.annotation:${glassFishAnnoatationVersion}",
+            roomRuntime :           "android.arch.persistence.room:runtime:${roomVersion}",
+            roomCompiler :          "android.arch.persistence.room:compiler:${roomVersion}",
+            roomRxJava :            "androidx.room:room-rxjava2:${roomVersion}",
+            archRuntime :           "androidx.lifecycle:lifecycle-runtime:${archComponentVersion}",
+            archExtensions :        "androidx.lifecycle:lifecycle-extensions:${archComponentVersion}",
+            archCompiler :          "androidx.lifecycle:lifecycle-compiler:${archComponentVersion}",
+            orientedImageView :     "com.litedevs:oriented-image-view:${orientedImageView}",
+            oldSupportFragment :    "com.android.support:support-fragment:${oldSupportLibraryVersion}"
+    ]
+}

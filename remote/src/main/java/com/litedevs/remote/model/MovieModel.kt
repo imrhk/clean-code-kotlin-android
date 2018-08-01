@@ -1,0 +1,32 @@
+package com.litedevs.remote.model
+
+data class MovieModel (
+        val adult : Boolean?,
+        val backdrop_path : String?,
+        val belongs_to_collection : CollectionModel?,
+        val budget : Int?,
+        val genreModels : Array<GenreModel>?,
+        val genre_ids : Array<Int>?,
+        val homepage : String?,
+        val id : Int,
+        val imdb_id : String?,
+        val original_language : String?,
+        val original_title : String?,
+        val overview : String?,
+        val popularity : Float?,
+        val poster_path : String?,
+        val production_companies : Array<ProductionCompanyModel>?,
+        val production_countries : Array<ProductionCountryModel>?,
+        val release_date : String?,
+        val revenue : Int?,
+        val runtime : Int?,
+        val spoken_languages : Array<LanguageModel>?,
+        val status : String?,
+        val tagline : String?,
+        val title : String?,
+        val video : Boolean?,
+        val vote_average : Float?,
+        val vote_count : Int?,
+        val credits : CreditModel?,
+        val keywords : KeywordsModel?
+        )

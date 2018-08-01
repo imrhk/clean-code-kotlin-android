@@ -1,0 +1,33 @@
+package com.litedevs.cache.model
+
+data class CachedMovie (
+        val adult : Boolean?,
+        val backdrop_path : String?,
+        val belongs_to_collection : CachedCollection?,
+        val budget : Int?,
+        val genres : List<CachedGenre>?,
+        val genre_ids : List<Int>?,
+        val homepage : String?,
+        val id : Int,
+        val imdb_id : String?,
+        val original_language : String?,
+        val original_title : String?,
+        val overview : String?,
+        val popularity : Float?,
+        val poster_path : String?,
+        val production_companies : List<CachedProductionCompany>?,
+        val production_countries : List<CachedProductionCountry>?,
+        val release_date : String?,
+        val revenue : Int?,
+        val runtime : Int?,
+        val spoken_languages : List<CachedLanguage>?,
+        val status : String?,
+        val tagline : String?,
+        val title : String?,
+        val video : Boolean?,
+        val vote_average : Float?,
+        val vote_count : Int?,
+        val cast : List<CachedCast>?,
+        val crew: List<CachedCrew>?,
+        val keyword : List<CachedKeyword>?
+)

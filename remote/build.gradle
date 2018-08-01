@@ -1,0 +1,31 @@
+plugins {
+    id 'de.fuerstenau.buildconfig' version '1.1.8'
+}
+apply plugin: 'kotlin'
+
+def globalConfiguration = rootProject.extensions.getByName("ext")
+
+buildConfig {
+    buildConfigField 'String', "TmdbApiKey", globalConfiguration["tmdb_api_key"]
+}
+
+
+dependencies {
+    def remoteDependencies = rootProject.ext.remoteDependencies
+    compile project(":data")
+
+    implementation remoteDependencies.gson
+    implementation remoteDependencies.rxKotlin
+    implementation remoteDependencies.kotlin
+    implementation remoteDependencies.javaxAnnotation
+    implementation remoteDependencies.javaxInject
+    implementation remoteDependencies.androidAnnotatons
+    implementation remoteDependencies.okHttp
+    implementation remoteDependencies.okHttpLogger
+    implementation remoteDependencies.retrofit
+    implementation remoteDependencies.retrofitConverter
+    implementation remoteDependencies.retrofitAdapter
+}
+
+sourceCompatibility = "1.6"
+targetCompatibility = "1.6"

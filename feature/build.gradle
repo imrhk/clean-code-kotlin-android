@@ -1,0 +1,68 @@
+apply plugin: 'com.android.feature'
+apply plugin: 'kotlin-android'
+apply plugin: 'kotlin-kapt'
+apply plugin: 'kotlin-android-extensions'
+
+android {
+    def globalConfiguration = rootProject.extensions.getByName("ext")
+
+    compileSdkVersion globalConfiguration["androidCompileSdkVersion"]
+    buildToolsVersion globalConfiguration["androidBuildToolVersion"]
+
+    defaultConfig {
+        minSdkVersion globalConfiguration["androidMinSdkVersion"]
+        targetSdkVersion globalConfiguration["androidTargetSdkVersion"]
+    }
+
+    buildTypes {
+        release {
+            minifyEnabled false
+            proguardFiles 'proguard-rules.pro'
+        }
+    }
+}
+
+dependencies {
+    def mobileUiDependencies = rootProject.ext.mobileUiDependencies
+    implementation fileTree(dir: 'libs', include: ['*.jar'])
+
+    implementation project(':base')
+
+    api project(":presentation")
+    api project(":data")
+    api project(":remote")
+    api project(":cache")
+
+    implementation mobileUiDependencies.javaxAnnotation
+
+    implementation mobileUiDependencies.kotlin
+    implementation mobileUiDependencies.javaxInject
+    implementation mobileUiDependencies.rxKotlin
+    implementation mobileUiDependencies.androidAnnotations
+    implementation mobileUiDependencies.androidSupportV4
+    implementation mobileUiDependencies.androidSupportV13
+    api mobileUiDependencies.appCompatV7
+    api mobileUiDependencies.constraintLayout
+    implementation mobileUiDependencies.supportRecyclerView
+    implementation mobileUiDependencies.supportDesign
+    implementation mobileUiDependencies.timber
+    implementation mobileUiDependencies.rxAndroid
+    implementation mobileUiDependencies.glide
+    implementation mobileUiDependencies.glideTransformation
+    implementation mobileUiDependencies.dagger
+    implementation mobileUiDependencies.daggerSupport
+
+    implementation mobileUiDependencies.archRuntime
+    implementation mobileUiDependencies.archExtensions
+    implementation mobileUiDependencies.roomRxJava
+    implementation mobileUiDependencies.orientedImageView
+
+    implementation mobileUiDependencies.oldSupportFragment
+
+    kapt mobileUiDependencies.archCompiler
+
+    kapt mobileUiDependencies.daggerCompiler
+    kapt mobileUiDependencies.daggerProcessor
+    compileOnly mobileUiDependencies.glassfishAnnotation
+
+}

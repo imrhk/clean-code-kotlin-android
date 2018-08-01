@@ -1,0 +1,68 @@
+<?xml version="1.0" encoding="utf-8"?>
+<ScrollView xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".browse.BrowseActivity">
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="vertical">
+
+        <fragment
+            android:name="com.litedevs.movieconic.feature.browse.BrowseLatestTrailersFragment"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:tag="trailers"
+            android:layout_marginLeft="8dp"
+            android:layout_marginRight="8dp"
+            android:layout_marginBottom="16dp"/>
+
+        <fragment
+            android:name="com.litedevs.movieconic.feature.browse.BrowseComingSoonFragment"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:tag="coming_soon"
+            android:layout_marginLeft="8dp"
+            android:layout_marginRight="8dp"
+            android:layout_marginBottom="16dp" />
+
+        <fragment
+            android:name="com.litedevs.movieconic.feature.browse.BrowseNowShowingFragment"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:tag="now_showing"
+            android:layout_marginLeft="8dp"
+            android:layout_marginRight="8dp"
+            android:layout_marginBottom="16dp"/>
+
+        <fragment
+            android:name="com.litedevs.movieconic.feature.browse.BrowseRecentMoviesFragment"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:tag="recent"
+            android:layout_marginLeft="8dp"
+            android:layout_marginRight="8dp"
+            android:layout_marginBottom="16dp"/>
+
+        <fragment
+            android:name="com.litedevs.movieconic.feature.browse.BrowsePopularMoviesFragment"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:tag="popular"
+            android:layout_marginLeft="8dp"
+            android:layout_marginRight="8dp"
+            android:layout_marginBottom="16dp"/>
+
+        <fragment
+            android:name="com.litedevs.movieconic.feature.browse.BrowseTopMoviesFragment"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:tag="top"
+            android:layout_marginLeft="8dp"
+            android:layout_marginRight="8dp"
+            android:layout_marginBottom="16dp"/>
+
+    </LinearLayout>
+</ScrollView>
